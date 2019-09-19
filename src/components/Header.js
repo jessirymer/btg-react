@@ -6,12 +6,9 @@ const Header = () => {
   return (
     <div className="header">
         <nav className="navbar fixed-top cic-header d-flex justify-content-between">
-            <div>
-                <div className="d-flex align-items-center;">
-                    <a className="navbar-brand" href="index.html"></a>
-                    <a className="nav-link be-toggle-left-sidebar" href="/#"><span className="icon mdi mdi-menu"></span></a>
-                    <Sidebar />
-                </div>
+            <div className="d-flex align-items-center;">
+                <a className="navbar-brand" href="index.html"></a>
+                <Sidebar />
             </div>
             <div className="page-title">
                 <span>
