@@ -9,20 +9,26 @@ class NavIcons extends Component {
         }
         this.showDropdown = this.showDropdown.bind(this);
         this.showUserDropdown = this.showUserDropdown.bind(this);
+        this.closeDropdowns = this.closeDropdowns.bind(this)
     }
 
     showDropdown = (e) => {
         e.preventDefault();
         
-        this.setState({
-          dropdown: true,
+        this.setState({ dropdown: true }, () => {
+            document.addEventListener("click", this.closeDropdowns)
         })
     }
     showUserDropdown = (e) => {
         e.preventDefault();
         
-        this.setState({
-          userDropdown: true,
+        this.setState({ userDropdown: true }, () => {
+            document.addEventListener("click", this.closeDropdowns)
+        })
+    }
+    closeDropdowns = () => {
+        this.setState({ dropdown: false, userDropdown: false }, () => {
+            document.removeEventListener("click", this.closeDropdowns)
         })
     }
 
@@ -31,49 +37,49 @@ class NavIcons extends Component {
             <div>
                 <ul className="nav be-icons-nav">
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button"  onClick={this.showDropdown}>
-                            <span className="icon mdi mdi-apps"></span>
+                        <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button" >
+                            <span className="icon mdi mdi-apps" onClick={ this.showDropdown }></span>
                         </a>
-                        {this.state.showDropdown
+                        { this.state.dropdown
                         ? (
                             <div>
-                            <ul className="dropdown-menu be-connections">
-                                <li>
-                                    <div className="list">
-                                        <div className="content">
-                                            <div className="row">
-                                                <div className="col">
-                                                    <a className="connection-item" href="product_add.html">
-                                                        <i className="fas fa-tshirt"></i>
-                                                        <span>Product</span>
-                                                    </a>
+                                <ul className="dropdown-menu be-connections show">
+                                    <li>
+                                        <div className="list">
+                                            <div className="content">
+                                                <div className="row">
+                                                    <div className="col">
+                                                        <a className="connection-item" href="product_add.html">
+                                                            <i className="fas fa-tshirt"></i>
+                                                            <span>Product</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="col"><a className="connection-item" href="client_add.html"><i className="fas fa-store-alt" ></i><span>Client</span></a></div>
+                                                    <div className="col"><a className="connection-item" href="asset_add.html"><i className="fas fa-palette" ></i><span>Asset</span></a></div>
                                                 </div>
-                                                <div className="col"><a className="connection-item" href="client_add.html"><i className="fas fa-store-alt" ></i><span>Client</span></a></div>
-                                                <div className="col"><a className="connection-item" href="asset_add.html"><i className="fas fa-palette" ></i><span>Asset</span></a></div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col"><a className="connection-item" href="ticket_add.html"><i className="fas fa-bug" ></i><span>Ticket</span></a></div>
-                                                <div className="col"><a className="connection-item" href="user_add.html"><i className="fas fa-user" ></i><span>User</span></a></div>
-                                                <div className="col"><a className="connection-item" href="supplier_add.html"><i className="fas fa-truck"></i><span>Supplier</span></a></div>
+                                                <div className="row">
+                                                    <div className="col"><a className="connection-item" href="ticket_add.html"><i className="fas fa-bug" ></i><span>Ticket</span></a></div>
+                                                    <div className="col"><a className="connection-item" href="user_add.html"><i className="fas fa-user" ></i><span>User</span></a></div>
+                                                    <div className="col"><a className="connection-item" href="supplier_add.html"><i className="fas fa-truck"></i><span>Supplier</span></a></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="footer"> <a href="/#"><i className="far fa-question-circle"></i> Feedback &amp; Support</a></div>
-                                </li>
-                            </ul>
+                                        <div className="footer"> <a href="/#"><i className="far fa-question-circle"></i> Feedback &amp; Support</a></div>
+                                    </li>
+                                </ul>
                             </div>
                         ) : (
                             null
                         )}
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img src={require("../images/avatar.png")} className="user-avatar" alt="Avatar" />
+                        <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button" aria-expanded="false" onClick={ this.showUserDropdown}>
+                            <img src={require("../images/avatar.png")} className="user-avatar" alt="Avatar"/>
                         </a>
                         {
-                            this.state.showUserDropdown
+                            this.state.userDropdown
                             ? (
-                                <div className="dropdown-menu" role="menu">
+                                <div className="dropdown-menu show" role="menu">
                                     <div className="user-info">
                                         <div className="user-name">User Name</div>
                                         <div className="user-position online">
