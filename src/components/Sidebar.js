@@ -21,7 +21,7 @@ class Sidebar extends Component {
         return (
             <div className="be-left-sidebar">
                 <div className="left-sidebar-wrapper">
-                    <a className="left-sidebar-toggle" href="/#" role="button" onClick={this.showMenu}>Dashboard</a>
+                    <a className="left-sidebar-toggle" href="/#" onClick={this.showMenu}>Dashboard</a>
                     { this.state.showMenu
                         ? (
                             <div>
@@ -126,3 +126,5 @@ class Sidebar extends Component {
 }
 
 export default Sidebar
+
+//                     <a className="left-sidebar-toggle" href="/#" onClick={this.showMenu}>Dashboard</a>

@@ -5,11 +5,13 @@ import './styles/Header.css';
 import './styles/cic_portal.css'
 import Header from "./components/Header"
 import AssetsPageBody from './components/AssetsPageBody';
+import SearchAndFilterBar from "./components/SearchAndFilterBar"
 
 const App = () => {
     return (
         <div>
             <Header />
+            <SearchAndFilterBar />
             <AssetsPageBody />
         </div>
     )

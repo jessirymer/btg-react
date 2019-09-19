@@ -6,7 +6,13 @@ const Header = () => {
   return (
     <div className="header">
         <nav className="navbar fixed-top cic-header d-flex justify-content-between">
-            <Sidebar />
+            <div>
+                <div className="d-flex align-items-center;">
+                    <a className="navbar-brand" href="index.html"></a>
+                    <a className="nav-link be-toggle-left-sidebar" href="/#"><span className="icon mdi mdi-menu"></span></a>
+                    <Sidebar />
+                </div>
+            </div>
             <div className="page-title">
                 <span>
                     <svg viewBox="0 0 24 24" className="App-logo">
@@ -16,9 +22,6 @@ const Header = () => {
                     <a className="btn btn-primary btn-sm" href="/#"><span className="mdi mdi-plus"></span> 
                         Add
                     </a>
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item active">Asset Management</li>
-                    </ol>
                 </span>
             </div>
             <NavIcons />

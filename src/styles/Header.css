@@ -6,3 +6,22 @@ svg {
   margin-right: 5px;
   fill: white;
 }
+
+.search-and-filter {
+  margin-top: 61px;
+}
+
+/* body, html{
+  margin:0;
+  padding:0;
+}
+
+.list-page {
+  width: 100%;
+  padding: 0;
+} */
+
+.main-content {
+
+  background-color: #EEEEEE;
+}
