@@ -25,3 +25,18 @@ svg {
 
   background-color: #EEEEEE;
 } */
+
+.asset-spacing {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* .search-bar .col {
+  text-align: center;
+} */
+
+
+.include-archive-label {
+  font-size: 14px;
+  margin-left: 6px;
+}

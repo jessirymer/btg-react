@@ -12634,7 +12634,6 @@ canvas {
 
 .be-left-sidebar:before {
   content: "";
-  position: fixed;
   z-index: -1;
   width: inherit;
   top: 0;
