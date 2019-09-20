@@ -31,7 +31,7 @@ class SearchAndFilterBar extends React.Component {
                                 </select>
                             </div>
                             <div className="col">
-                                <input type="text" defaultValue="Asset Id" className="form-control" title="If you know the id of the asset you want, enter it here and hit the search button." />
+                                <input type="text" placeholder="Asset Id" className="form-control" title="If you know the id of the asset you want, enter it here and hit the search button." />
                             </div>
                             <div className="col">
                                 <input type="text" placeholder="Keyword" className="form-control" title="Search by asset name, artwork name, description and colors." />

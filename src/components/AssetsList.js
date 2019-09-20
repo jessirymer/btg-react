@@ -1,13 +1,14 @@
 import React from "react"
 import AssetItem from "./AssetItem"
 
+// import VersionsModal from "./VersionsModal"
+
 class AssetsList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             assets: []
         }
-
     }
 
     componentDidMount() {
@@ -30,11 +31,15 @@ class AssetsList extends React.Component {
             />
         )
         return (
-            <div className="main-content container-fluid">
-                <div className="row ng-scope d-flex flex-wrap" ng-if="assets.length > 0">
-                    {assets}
+            <div>
+                <div className="main-content container-fluid">
+                    <div className="row ng-scope d-flex flex-wrap" ng-if="assets.length > 0">
+                        {assets}
+                    </div>
                 </div>
-            </div>  
+
+
+            </div>
         )
     }
 }
