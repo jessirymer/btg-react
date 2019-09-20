@@ -40,8 +40,7 @@ class NavIcons extends Component {
                         <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button" >
                             <span className="icon mdi mdi-apps" onClick={ this.showDropdown }></span>
                         </a>
-                        { this.state.dropdown
-                        ? (
+                        { this.state.dropdown &&
                             <div>
                                 <ul className="dropdown-menu be-connections show">
                                     <li>
@@ -68,46 +67,39 @@ class NavIcons extends Component {
                                     </li>
                                 </ul>
                             </div>
-                        ) : (
-                            null
-                        )}
+                        }
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="/#" data-toggle="dropdown" role="button" aria-expanded="false" onClick={ this.showUserDropdown}>
                             <img src={require("../images/avatar.png")} className="user-avatar" alt="Avatar"/>
                         </a>
-                        {
-                            this.state.userDropdown
-                            ? (
-                                <div className="dropdown-menu show" role="menu">
-                                    <div className="user-info">
-                                        <div className="user-name">User Name</div>
-                                        <div className="user-position online">
-                                            <div className="switch-button switch-button-sm">
-                                                <input type="checkbox" checked="" name="st1" id="st1" />
-                                                <span>
-                                                    <label for="st1"></label>
-                                                </span>
-                                            </div>
-                                            <span className="name">Available</span>
+                        { this.state.userDropdown &&
+                            <div className="dropdown-menu show" role="menu">
+                                <div className="user-info">
+                                    <div className="user-name">User Name</div>
+                                    <div className="user-position online">
+                                        <div className="switch-button switch-button-sm">
+                                            <input type="checkbox" checked="" name="st1" id="st1" />
+                                            <span>
+                                                <label for="st1"></label>
+                                            </span>
                                         </div>
+                                        <span className="name">Available</span>
                                     </div>
-                                    <a className="dropdown-item" href="pages-profile.html">
-                                        <span className="icon mdi mdi-face"></span>
-                                        Account
-                                    </a>
-                                    <a className="dropdown-item" href="/#">
-                                        <span className="icon mdi mdi-settings"></span>
-                                        Settings
-                                    </a>
-                                    <a className="dropdown-item" href="pages-login.html">
-                                        <span className="icon mdi mdi-power"></span>
-                                        Logout
-                                    </a>
                                 </div>
-                            ) : (
-                                null
-                            )
+                                <a className="dropdown-item" href="pages-profile.html">
+                                    <span className="icon mdi mdi-face"></span>
+                                    Account
+                                </a>
+                                <a className="dropdown-item" href="/#">
+                                    <span className="icon mdi mdi-settings"></span>
+                                    Settings
+                                </a>
+                                <a className="dropdown-item" href="pages-login.html">
+                                    <span className="icon mdi mdi-power"></span>
+                                    Logout
+                                </a>
+                            </div>
                         }
                         
                     </li>

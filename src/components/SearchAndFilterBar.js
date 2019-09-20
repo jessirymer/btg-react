@@ -17,29 +17,29 @@ class SearchAndFilterBar extends React.Component {
     }
     render() {
         return (
-            <div className="be-content search-and-filter">
+            <div className="search-and-filter">
                 <div className="page-head list-page">
                     <div className="search-form">
                         <div className="d-flex search-bar align-items-center">
                             <div className="form-field">
                                 <select name="" id=""  className="form-control" title="Choose the client you want to view assets for.">
-                                    <option value="">Client</option>
-                                    <option value="">Amazon</option>
-                                    <option value="">Go Daddy</option>
-                                    <option value="">Microsoft</option>
-                                    <option value="">Xerox</option>
+                                    <option defaultValue="">Client</option>
+                                    <option defaultValue="">Amazon</option>
+                                    <option defaultValue="">Go Daddy</option>
+                                    <option defaultValue="">Microsoft</option>
+                                    <option defaultValue="">Xerox</option>
                                 </select>
                             </div>
                             <div className="col">
-                                <input type="text" value="Asset Id" className="form-control" title="If you know the id of the asset you want, enter it here and hit the search button." />
+                                <input type="text" defaultValue="Asset Id" className="form-control" title="If you know the id of the asset you want, enter it here and hit the search button." />
                             </div>
                             <div className="col">
                                 <input type="text" placeholder="Keyword" className="form-control" title="Search by asset name, artwork name, description and colors." />
                             </div>
-                            <div className="col">
-                                <label className="custom-control custom-checkbox" title="Check this box if you want to include archived assets in your search.">
-                                    <input className="custom-control-input" type="checkbox" />
-                                    <span className="custom-control-label">Include Archive</span>
+                            <div className="d-flex justify-content-around align-items-center">
+                                <label className="custom-control custom-checkbox flex-d align-items-center" title="Check this box if you want to include archived assets in your search.">
+                                    <input className="" type="checkbox" />
+                                    <span className="include-archive-label">Include Archive</span>
                                 </label>
                             </div>
                             <div className="col">
@@ -59,39 +59,37 @@ class SearchAndFilterBar extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        {
-                            this.state.showFilter
-                            ? (
+                            { this.state.showFilter &&
                                 <div className="search-filters">
                                 <div className="d-flex search-bar">
                                     <div className="form-field">
                                         <label for="">Store</label>
                                         <select className="form-control form-control-sm" name="" id="" title="Choose the store you want to see assets for.">
-                                            <option value="">All</option>
-                                            <option value="">GoDaddy Store 1</option>
-                                            <option value="">GoDaddy Store 2</option>
+                                            <option defaultValue="">All</option>
+                                            <option defaultValue="">GoDaddy Store 1</option>
+                                            <option defaultValue="">GoDaddy Store 2</option>
                                         </select>
                                     </div>
                                     <div className="form-field">
                                         <label for="">Asset Type</label>
                                         <select className="form-control form-control-sm" name="" id="" title="Choose the asset type you'd like to see in your search results">
-                                            <option value="">All</option>
-                                            <option value="">Company Logo</option>
-                                            <option value="">Store Logo</option>
-                                            <option value="">Personal Logo</option>
-                                            <option value="">Style Guide</option>
-                                            <option value="">Marketing Material</option>
+                                            <option defaultValue="">All</option>
+                                            <option defaultValue="">Company Logo</option>
+                                            <option defaultValue="">Store Logo</option>
+                                            <option defaultValue="">Personal Logo</option>
+                                            <option defaultValue="">Style Guide</option>
+                                            <option defaultValue="">Marketing Material</option>
                                         </select>
                                     </div>
                                     <div className="form-field">
                                         <label for="">Logo Type</label>
                                         <select className="form-control form-control-sm" name="" id=""  title="Choose the logo type you'd like to see in your search results">
-                                            <option value="">All</option>
-                                            <option value="">4 color Process</option>
-                                            <option value="">Embroidery File</option>
-                                            <option value="">Laser Engraving File</option>
-                                            <option value="">Single Color</option>
-                                            <option value="">Spot Color</option>
+                                            <option defaultValue="">All</option>
+                                            <option defaultValue="">4 color Process</option>
+                                            <option defaultValue="">Embroidery File</option>
+                                            <option defaultValue="">Laser Engraving File</option>
+                                            <option defaultValue="">Single Color</option>
+                                            <option defaultValue="">Spot Color</option>
                                         </select>
                                     </div>
                                     <div className="form-field">
@@ -104,11 +102,7 @@ class SearchAndFilterBar extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            ) : (
-                                null
-                            )
-                        }
-                        
+                        }    
                     </div>
                 </div>
             </div>

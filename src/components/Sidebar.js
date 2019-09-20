@@ -28,8 +28,7 @@ class Sidebar extends Component {
         return (
             <div>
                 <a className="nav-link be-toggle-left-sidebar" href="/#"><span className="icon mdi mdi-menu" onClick={this.showMenu}></span></a>
-                { this.state.showMenu
-                ? (
+                { this.state.showMenu &&
                     <div className="be-left-sidebar">
                         <div className="left-sidebar-wrapper">
                             <div className="left-sidebar-spacer">
@@ -122,9 +121,6 @@ class Sidebar extends Component {
                             </div>
                         </div>
                     </div>
-                ) : (
-                        null
-                    )
                 }
             </div>
         )
