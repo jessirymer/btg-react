@@ -40,3 +40,8 @@ svg {
   font-size: 14px;
   margin-left: 6px;
 }
+
+.card-asset {
+  margin-left: 12px;
+  margin-right: 12px;
+}
