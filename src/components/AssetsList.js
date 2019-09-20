@@ -1,15 +1,20 @@
 import React from "react"
-import seedData from "../assets.js"
 import AssetItem from "./AssetItem"
 
 class AssetsList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            assets: seedData
+            assets: []
         }
 
     }
+
+    componentDidMount() {
+        fetch('/Assets.json')
+          .then(response => response.json())
+          .then(data => this.setState({ assets: data }));
+      }
 
     render () {
         const assets =this.state.assets.map((asset, key) => 
