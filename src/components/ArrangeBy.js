@@ -12,7 +12,7 @@ const ArrangeBy = () => {
               </button>
             </div>
             <div className="inline-field">
-              <label for="">Arrange By</label>
+              <label htmlFor="">Arrange By</label>
               <select className="form-control form-control-sm" name="" id="">
                 <option value="">Asset ID</option>
                 <option value="">Asset Name</option>
