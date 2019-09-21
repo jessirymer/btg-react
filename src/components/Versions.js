@@ -3,6 +3,10 @@ import React from "react"
 class Versions extends React.Component {
   render() {
 
+    const colors = this.props.colors.map((color, i) => {
+      return(<div key={i} className="swatch" style={{backgroundColor: color}}></div>)
+    })
+
     return (
       <div className="asset-list">
         <div className="row border-bottom">
@@ -23,13 +27,14 @@ class Versions extends React.Component {
               }
               <li>Description: {this.props.description}</li>
               <li>Colors: 
-                <div>
+                <div className="d-inline-block">
+                  {colors}
                 </div>
               </li>
               <li>
-                <button class="btn btn-sm"><i class="fa fa-link"></i> Public</button>
-                <button class="btn btn-sm"><i class="fa fa-download"></i> Download</button>
-                <button class="btn btn-sm"><i class="fa fa-file-image"></i> Preview</button>
+                <button className="btn btn-sm"><i className="fa fa-link"></i> Public</button>
+                <button className="btn btn-sm"><i className="fa fa-download"></i> Download</button>
+                <button className="btn btn-sm"><i className="fa fa-file-image"></i> Preview</button>
               </li>
             </ul>
           </div>

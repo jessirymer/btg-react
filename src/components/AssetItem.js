@@ -24,7 +24,7 @@ class AssetItem extends React.Component {
 
 
     render() {
-        const versions =this.props.versions.map((version, key) => 
+        const versions =this.props.versions.map((version) => 
             <Versions 
                 key={version.id}
                 id={version.id}
@@ -73,7 +73,7 @@ class AssetItem extends React.Component {
                         </Modal.Header>
                         <Modal.Body>{versions}</Modal.Body>
                         <Modal.Footer>
-                        <div class="text-center m-t-10"><button class="btn btn-lg">Add Variation</button></div>
+                        <div className="text-center m-t-10"><Button className="btn btn-lg">Add Variation</Button></div>
                         </Modal.Footer>
                     </Modal>
                 </div> 
